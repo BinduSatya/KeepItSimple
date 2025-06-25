@@ -6,19 +6,18 @@ import { redirectFromShortUrl } from "./src/controller/short_url.controller.js";
 // import auth_routes from "./src/routes/auth.routes.js";
 // import { redirectFromShortUrl } from "./src/controller/short_url.controller.js";
 // import { errorHandler } from "./src/utils/errorHandler.js";
-// import cors from "cors";
+import cors from "cors";
 // import { attachUser } from "./src/utils/attachUser.js";
 // import cookieParser from "cookie-parser";
 
-
 const app = express();
 
-// app.use(
-//   cors({
-//     origin: "http://localhost:5173",
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
